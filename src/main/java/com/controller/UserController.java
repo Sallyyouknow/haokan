@@ -21,7 +21,13 @@ public class UserController {
     public int addUser(User user){
         return userService.addUser(user);
     }
-
+    
+    @ResponseBody
+    @RequestMapping(value = "/get/{userId}", produces = {"application/json;charset=UTF-8"})
+    public User getUser(@PathVariable("userId") String userId){
+        return userService.getUser(userId);
+    }
+    
     @ResponseBody
     @RequestMapping(value = "/all/{pageNum}/{pageSize}", produces = {"application/json;charset=UTF-8"})
     public Object findAllUser(@PathVariable("pageNum") int pageNum, @PathVariable("pageSize") int pageSize){
