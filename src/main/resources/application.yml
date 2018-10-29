@@ -1,5 +1,5 @@
 server:
-  port: 81100
+  port: 5678
   servlet:
     context-path: /haokan
 spring:
